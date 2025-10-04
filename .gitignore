@@ -1,0 +1,25 @@
+# Temporary or system files
+.DS_Store
+
+# Neovim swap/backup/session files
+*.swp
+*.swo
+*.bak
+*.tmp
+Session.vim
+
+# Logs
+*.log
+
+# Zsh history
+.zsh_history
+
+# Ignore backups and nested repos
+backup_*/
+.config/nvim/pack/
+.config/nvim/nvim/
+.config/kitty/kitty/
+.config/kitty/kitty-themes/
+
+
+
