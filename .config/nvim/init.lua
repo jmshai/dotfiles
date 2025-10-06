@@ -29,3 +29,6 @@ vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", {desc = 'Move selection down'})
 
 require("config.lazy")
 
+
+require("oil").setup()
+
