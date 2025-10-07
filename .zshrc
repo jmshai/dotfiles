@@ -75,3 +75,6 @@ zstyle :compinstall filename '/Users/Shailesh/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# ZOXIDE
+eval "$(zoxide init zsh)"
