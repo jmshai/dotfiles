@@ -32,7 +32,7 @@ mkcd() { mkdir "$1" && cd "$1" }
 alias c="clear"
 alias h="history"
 alias weather="curl -s v2.wttr.in/Singapore"
-alias pdf="open -a Sioyek"
+alias pdf="zathura"
 alias myip="curl -s ifconfig.me"
 alias mb="brew"
 # ============================================
