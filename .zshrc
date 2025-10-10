@@ -31,13 +31,15 @@ oa() {
 }
 mkcd() { mkdir "$1" && cd "$1" } 
 
+pdf() { open -a sioyek "$@" }
+
+
 # ============================================
 # GENERAL ALIASES
 # ============================================
 alias c="clear"
 alias h="history"
 alias weather="curl -s v2.wttr.in/Singapore"
-alias pdf="sioyek"
 alias myip="curl -s ifconfig.me"
 alias mb="brew"
 
