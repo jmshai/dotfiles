@@ -123,6 +123,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-t = 'workspace T' # Telegram
 	alt-p = 'workspace P' # PDF 
 	alt-v = 'workspace V' # Visual Studio Code
+	alt-r = 'workspace R' # Reminders 
+
 	
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -136,7 +138,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-t = 'move-node-to-workspace T'
 	alt-shift-p = 'move-node-to-workspace P'
 	alt-shift-v = 'move-node-to-workspace V'
-
+	alt-shift-r = 'move-node-to-workspace R' 
 	
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -190,6 +192,12 @@ automatically-unhide-macos-hidden-apps = false
 	if.app-id = 'com.microsoft.VSCode'
 	run = 'move-node-to-workspace V' 
 
+
+
+	[[on-window-detected]]
+	if.app-id = 'com.apple.reminders'
+	run = 'move-node-to-workspace R' 
+
 	[workspace-to-monitor-force-assignment]
 	1 = 'main'
 	2 = 'main'
@@ -201,3 +209,4 @@ automatically-unhide-macos-hidden-apps = false
 	T = 'main'
 	P = 'main'  # Add P workspace assignment too[mode.service.binding]
 	V = 'main'
+	R = 'main'
