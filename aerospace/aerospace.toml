@@ -170,6 +170,11 @@ automatically-unhide-macos-hidden-apps = false
 	[[on-window-detected]]
 	if.app-id = 'com.apple.Safari' 
 	run = 'move-node-to-workspace 2'
+
+
+	[[on-window-detected]]
+	if.app-id = 'com.brave.Browser' 
+	run = 'move-node-to-workspace 2'
 	
 	[[on-window-detected]]
 	if.app-id = 'com.apple.finder'
