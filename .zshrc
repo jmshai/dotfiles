@@ -37,6 +37,13 @@ mkcd() { mkdir "$1" && cd "$1" }
 
 pdf() { open -a sioyek "$@" }
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # ============================================
 # GENERAL ALIASES
@@ -55,7 +62,7 @@ alias ..="cd .."
 # ============================================
 # FILE LISTINGS
 # ============================================
-alias ls="ls -la -G"
+alias ls="ls -la -G -h"
 alias lt="ls -lth -G"
 
 # ============================================
@@ -67,12 +74,6 @@ alias grep="grep --color=auto"
 # GIT ALIASES
 # ============================================
 alias g="git"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias gp="git push"
-alias gl="git log --oneline"
-alias gd="git diff"
 
 # ============================================
 # ZSH COMPLETION
