@@ -53,6 +53,7 @@ alias h="history"
 alias weather="curl -s v2.wttr.in/Singapore"
 alias myip="curl -s ifconfig.me"
 alias mb="brew"
+alias doc2pdf='soffice --headless --convert-to pdf'
 
 # ============================================
 # NAVIGATION
