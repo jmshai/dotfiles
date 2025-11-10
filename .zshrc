@@ -93,3 +93,8 @@ compinit
 # ZOXIDE
 # ============================================
 eval "$(zoxide init zsh)"
+
+# Created by `pipx` on 2025-11-03 17:18:00
+export PATH="$PATH:/Users/Shailesh/.local/bin"
+
+export PATH=$PATH:/Users/Shailesh/.spicetify
