@@ -202,6 +202,10 @@ automatically-unhide-macos-hidden-apps = false
 	if.app-id = 'info.sioyek.sioyek'
 	run = 'move-node-to-workspace P'
 
+	[[on-window-detected]]
+	if.app-id = 'com.apple.Preview'
+	run = 'move-node-to-workspace P'
+
 
 	[[on-window-detected]]
 	if.app-id = 'com.microsoft.VSCode'
