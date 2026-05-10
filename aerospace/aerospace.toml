@@ -121,7 +121,8 @@ automatically-unhide-macos-hidden-apps = false
 	alt-6 = 'workspace 6'
 	alt-7 = 'workspace 7'
 	alt-8 = 'workspace 8'
-	alt-9 = 'workspace 9'
+	alt-9 = 'workspace 9' # Second Screen 
+	alt-b = 'workspace B' # Apple Books
     alt-f = 'workspace F' # Finder
     alt-s = 'workspace S' # Spotify
     alt-t = 'workspace T' # Telegram
@@ -180,10 +181,6 @@ automatically-unhide-macos-hidden-apps = false
 	if.app-id = 'org.mozilla.firefox' 
 	run = 'move-node-to-workspace 2'
 
-
-	[[on-window-detected]]
-	if.app-id = 'com.brave.Browser' 
-	run = 'move-node-to-workspace 2'
 	
 	[[on-window-detected]]
 	if.app-id = 'com.apple.finder'
@@ -234,9 +231,9 @@ automatically-unhide-macos-hidden-apps = false
 	7 = 'main'
 	8 = 'main'
 	9 = 'secondary'
-	F = 'main'  # Also note: should be 'main' not ['main']
+	F = 'main' 
 	S = 'main'
 	T = 'main'
-	P = 'main'  # Add P workspace assignment too[mode.service.binding]
+	P = 'main' 
 	V = 'main'
 	R = 'main'
