@@ -1,13 +1,13 @@
 {
-  "blink.cmp": { "branch": "main", "commit": "4b18c32adef2898f95cdef6192cbd5796c1a332d" },
+  "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
-  "fzf": { "branch": "master", "commit": "7e62b34087a71aba4950e70d921a2476f05fb966" },
-  "fzf.vim": { "branch": "master", "commit": "34a564c81f36047f50e593c1656f4580ff75ccca" },
+  "fzf": { "branch": "master", "commit": "263eb4732fc6268f9fb35cffb634903ea8e2a26b" },
+  "fzf.vim": { "branch": "master", "commit": "b9624aa012ddcbae9e79964bfd30cc1fbe3cf263" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "mini.icons": { "branch": "main", "commit": "efc85e42262cd0c9e1fdbf806c25cb0be6de115c" },
-  "nvim-lspconfig": { "branch": "master", "commit": "0480b120318ec8bab27b530ffab6ee76a8c4d806" },
-  "nvim-web-devicons": { "branch": "master", "commit": "746ffbb17975ebd6c40142362eee1b0249969c5c" },
-  "oil.nvim": { "branch": "master", "commit": "f55b25e493a7df76371cfadd0ded5004cb9cd48a" },
-  "vague.nvim": { "branch": "main", "commit": "c1ab4d4891ff3a27deba6a80222d895ac8ffb2e5" },
-  "vimtex": { "branch": "master", "commit": "f707368022cdb851716be0d2970b90599c84a6a6" }
+  "mini.icons": { "branch": "main", "commit": "bac6317300e205335df425296570d84322730067" },
+  "nvim-lspconfig": { "branch": "master", "commit": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7" },
+  "nvim-web-devicons": { "branch": "master", "commit": "2795c26c916bb3c57dde308b82be51971fa92747" },
+  "oil.nvim": { "branch": "master", "commit": "0fcc83805ad11cf714a949c98c605ed717e0b83e" },
+  "vague.nvim": { "branch": "main", "commit": "fd58046b9d64259d9785e4aeb6d6f494c6943cad" },
+  "vimtex": { "branch": "master", "commit": "97e11bd4f56d46a87f8593d6ccb27820e19c4ab0" }
 }
