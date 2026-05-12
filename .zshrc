@@ -54,7 +54,7 @@ alias weather="curl -s v2.wttr.in/Singapore"
 alias myip="curl -s ifconfig.me"
 alias mb="brew"
 alias doc2pdf='soffice --headless --convert-to pdf'
-
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 # ============================================
 # NAVIGATION
 # ============================================
@@ -89,3 +89,7 @@ eval "$(zoxide init zsh)"
 export PATH="$PATH:/Users/Shailesh/.local/bin"
 
 export PATH=$PATH:/Users/Shailesh/.spicetify
+
+# SSH TERMINAL
+export TERM=xterm-256color
+
