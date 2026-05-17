@@ -124,7 +124,7 @@ automatically-unhide-macos-hidden-apps = false
 	alt-9 = 'workspace 9' # Second Screen 
 	alt-b = 'workspace B' # Apple Books
     alt-f = 'workspace F' # Finder
-    alt-s = 'workspace S' # Spotify
+    alt-s = 'workspace S' # Spotify AND Stremio
     alt-t = 'workspace T' # Telegram
 	alt-p = 'workspace P' # PDF 
 	alt-v = 'workspace V' # Visual Studio Code
@@ -197,7 +197,7 @@ automatically-unhide-macos-hidden-apps = false
 
 
 	[[on-window-detected]]
-	if.app-id = 'com.jpochyla.psst'
+	if.app-id = 'com.westbridge.stremio5-mac'
 	run = 'move-node-to-workspace S'
 	
 	[[on-window-detected]]
