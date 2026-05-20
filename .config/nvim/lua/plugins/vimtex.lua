@@ -4,9 +4,9 @@ return {
   -- tag = "v2.15", -- uncomment to pin to a specific release
   init = function()
     -- PDF Viewer settings
-	vim.g.vimtex_view_method = 'general'
-    vim.g.vimtex_view_general_viewer = 'zathura'
-
+	vim.g.vimtex_view_method = 'sioyek'
+	vim.g.vimtex_view_sioyek_exe = '/Applications/sioyek.app/Contents/MacOS/sioyek'
+	vim.g.vimtex_callback_progpath = '/opt/homebrew/bin/nvim'
     
 	-- Compiler settings
     vim.g.vimtex_compiler_method = "latexmk"
