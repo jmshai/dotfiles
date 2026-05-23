@@ -37,6 +37,12 @@ require("everforest").setup({
 })
 vim.cmd("colorscheme everforest")
 
+local theme = vim.fn.system("cat ~/.config/kitty/current-theme.conf")
+if theme:lower():find("dark") then
+  vim.o.background = "dark"
+else
+  vim.o.background = "light"
+end
 -- ============================================================
 -- VIM OPTIONS
 -- ============================================================
