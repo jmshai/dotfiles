@@ -26,8 +26,8 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/hrsh7th/cmp-buffer" },
   { src = "https://github.com/hrsh7th/cmp-path" },
+  { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 })
-
 -- ============================================================
 -- THEME
 -- ============================================================
@@ -162,9 +162,15 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'References' })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+
+-- ============================================================
+-- INLINE DIAGNOSTICS
+-- ============================================================
+vim.diagnostic.config({ virtual_text = false })
+require("tiny-inline-diagnostic").setup({
+    preset = "modern",
+})
 
 -- ============================================================
 -- COMPLETION
