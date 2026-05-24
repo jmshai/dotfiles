@@ -21,7 +21,11 @@ eval "$(fzf --zsh)"
 # ============================================
 # PROMPT
 # ============================================
-PROMPT='%(?.%F{green}>.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats 'on %b'
+setopt PROMPT_SUBST
+PROMPT='%n @ %1~ ${vcs_info_msg_0_}> '
 
 # ============================================
 # FUNCTIONS
