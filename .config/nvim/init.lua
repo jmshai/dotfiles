@@ -71,7 +71,10 @@ vim.keymap.set('n', '<C-k>', ':m .-2<CR>==', { desc = 'Move line up' })
 vim.keymap.set('n', '<C-j>', ':m .+1<CR>==', { desc = 'Move line down' })
 vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
-vim.keymap.set('n', '<leader>g', ':terminal lazygit<CR>', { desc = 'Lazygit' })
+vim.keymap.set('n', '<leader>g', function()
+  vim.cmd('tabnew | terminal lazygit')
+  vim.cmd('startinsert')
+end, { desc = 'Lazygit' })
 
 -- ============================================================
 -- OIL
@@ -192,3 +195,19 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spelllang = "en_gb"
   end,
 })
+
+
+-- ============================================================
+-- GIT STATUSLINE
+-- ============================================================
+local function git_branch()
+  return vim.fn.system("git -C " .. vim.fn.expand("%:h") .. " branch --show-current 2>/dev/null | tr -d '\n'")
+end
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.b.git_branch = git_branch()
+  end,
+})
+
+vim.o.statusline = " %f %m %= %{b:git_branch} "
