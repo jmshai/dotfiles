@@ -23,9 +23,9 @@ eval "$(fzf --zsh)"
 # ============================================
 autoload -Uz vcs_info
 precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats 'on %b'
+zstyle ':vcs_info:git:*' formats ' on %b'
 setopt PROMPT_SUBST
-PROMPT='%n @ %1~ ${vcs_info_msg_0_}> '
+PROMPT='%F{173}%n%f @ %F{109}%1~%f%F{143}${vcs_info_msg_0_}%f> '
 
 # ============================================
 # FUNCTIONS
