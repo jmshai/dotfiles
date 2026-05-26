@@ -54,11 +54,12 @@ function y() {
 # ============================================
 alias c="clear"
 alias h="history"
-alias weather="curl -s v2.wttr.in/Singapore"
+alias weather="curl wttr.in/Singapore"
 alias myip="curl -s ifconfig.me"
 alias mb="brew"
 alias doc2pdf='soffice --headless --convert-to pdf'
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+alias vim="nvim"
 # ============================================
 # NAVIGATION
 # ============================================
