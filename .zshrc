@@ -60,6 +60,7 @@ alias mb="brew"
 alias doc2pdf='soffice --headless --convert-to pdf'
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 alias vim="nvim"
+alias sshwsl="ssh shai@100.93.19.19"
 # ============================================
 # NAVIGATION
 # ============================================
