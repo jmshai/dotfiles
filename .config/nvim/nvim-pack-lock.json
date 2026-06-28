@@ -24,6 +24,10 @@
       "rev": "b9b98ac5741afd2d0aa1e09f24b1614d4c91f15a",
       "src": "https://github.com/junegunn/fzf.vim"
     },
+    "markview.nvim": {
+      "rev": "301e431c7b618235f5447d54465c70934bd33668",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
     "nvim-cmp": {
       "rev": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca",
       "src": "https://github.com/hrsh7th/nvim-cmp"
