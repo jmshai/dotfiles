@@ -187,16 +187,7 @@ cmp.setup({
 mapping = cmp.mapping.preset.insert({
   ['<C-Space>'] = cmp.mapping.complete(),
   ['<C-e>'] = cmp.mapping.abort(),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  ['<Tab>'] = cmp.mapping(function(fallback)
-  if vim.fn['UltiSnips#CanJumpForwards']() == 1 then
-    vim.fn['UltiSnips#JumpForwards']()
-  elseif cmp.visible() then
-    cmp.select_next_item()
-  else
-    fallback()
-  end
-end, { 'i', 's' }),
+  ['<CR>'] = cmp.mapping.confirm({ select = false }),
 }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
