@@ -189,19 +189,14 @@ mapping = cmp.mapping.preset.insert({
   ['<C-e>'] = cmp.mapping.abort(),
   ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ['<Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_next_item()
-    else
-      fallback()
-    end
-  end, { 'i', 's' }),
-  ['<S-Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item()
-    else
-      fallback()
-    end
-  end, { 'i', 's' }),
+  if vim.fn['UltiSnips#CanJumpForwards']() == 1 then
+    vim.fn['UltiSnips#JumpForwards']()
+  elseif cmp.visible() then
+    cmp.select_next_item()
+  else
+    fallback()
+  end
+end, { 'i', 's' }),
 }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -236,3 +231,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.o.statusline = " %f %m %= %{b:git_branch} "
+
+-- ============================================================
+-- ULTISNIPS
+-- ============================================================
+vim.g.UltiSnipsExpandTrigger = "<tab>"
+vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"

@@ -1,0 +1,73 @@
+snippet item "itemize environment" bA
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet it "item line" bA
+\item $0
+endsnippet
+
+snippet template "Document template" b
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+% Header Setup
+\pagestyle{fancy}
+\fancyhf{} % clear headers
+\lhead{shaijm} % left header
+\rhead{${1:course code}} % right header
+\cfoot{\thepage} % center header
+\begin{document}
+\chapter{${2:Chapter Name}}
+\section{${3:Section Name}}
+$0
+\end{document}
+endsnippet
+
+snippet chap "Chapter" b
+\chapter{$1}
+$0
+endsnippet
+
+snippet sec "Section" b
+\section{$1}
+$0
+endsnippet
+
+snippet eq "Equation" bA
+\begin{equation}
+	$1
+\end{equation}
+$0
+endsnippet
+
+snippet mk "Inline math" wA
+$${1}$$0
+endsnippet
+
+snippet dm "Math block" bA
+\[
+	$1
+\]
+$0
+endsnippet
+
+snippet bf "Bold" wA
+\textbf{$1}$0
+endsnippet
+
+snippet it "Italics" wA
+\textit{$1}$0
+endsnippet
+
+snippet em "Emphasis" wA
+\emph{$1}$0
+endsnippet
+
+snippet enum "Enumerate (numbered list)" bA
+\begin{enumerate}
+	\item $1
+$0
+\end{enumerate}
+endsnippet
