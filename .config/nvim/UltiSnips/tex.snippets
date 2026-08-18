@@ -8,17 +8,22 @@ snippet it "item line" b
 \item $0
 endsnippet
 
-snippet template "Document template" b
-\documentclass{article}
+snippet notes "Notes template" b
+\documentclass[10]{report}
 \usepackage{fancyhdr}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathSizes{10}{10}{10}{10}
+
 % Header Setup
 \pagestyle{fancy}
 \fancyhf{} % clear headers
 \lhead{shaijm} % left header
 \rhead{${1:course code}} % right header
 \cfoot{\thepage} % center header
+
 \begin{document}
+
 \chapter{${2:Chapter Name}}
 \section{${3:Section Name}}
 $0
