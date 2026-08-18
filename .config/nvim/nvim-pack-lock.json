@@ -48,6 +48,10 @@
       "rev": "147af4e49f51dd48f41972de26552872b8ba7b25",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
     },
+    "ultisnips": {
+      "rev": "62aca2a735b76d24a8fc7862f902330ac688849b",
+      "src": "https://github.com/SirVer/ultisnips"
+    },
     "vimtex": {
       "rev": "182ad387e3f3107699483606c9a2b6648f8437b2",
       "src": "https://github.com/lervag/vimtex"

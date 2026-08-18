@@ -1,3 +1,4 @@
+ vim.g.python3_host_prog = '/Users/Shailesh/.local/share/uv/tools/pynvim/bin/python3'
 -- ============================================================
 -- PLUGINS
 -- ============================================================
@@ -30,6 +31,9 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/cmp-buffer" },
   { src = "https://github.com/hrsh7th/cmp-path" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+
+  -- Snippets
+  {src = "https://github.com/SirVer/ultisnips" },
 })
 -- ============================================================
 -- THEME
