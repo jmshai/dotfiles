@@ -1,4 +1,6 @@
  vim.g.python3_host_prog = '/Users/Shailesh/.local/share/uv/tools/pynvim/bin/python3'
+ vim.opt.colorcolumn = "80"
+ vim.opt.wrap = true
 -- ============================================================
 -- PLUGINS
 -- ============================================================
