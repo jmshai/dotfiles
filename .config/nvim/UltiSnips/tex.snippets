@@ -15,15 +15,18 @@ snippet notes "Notes template" b
 \usepackage{amssymb}
 \usepackage{parskip}
 \usepackage{float}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{wrapfig}
 \DeclareMathSizes{10}{10}{10}{10}
-
+\pgfplotsset{compat=1.18}
 % Header Setup
 \pagestyle{fancy}
 \fancyhf{} % clear headers
 \lhead{shaijm} % left header
 \rhead{${1:course code}} % right header
-\cfoot{\thepage} % center header
-
+\cfoot{\thepage} % center footer
 \begin{document}
 \setcounter{chapter}{0}
 \chapter{${2:Chapter Name}}
@@ -90,12 +93,12 @@ snippet sub "subsection" b
 \subsection{$1}$0
 endsnippet
 
-snippet subsub	"subsubsection" b
+snippet subsub "subsubsection" b
 \subsubsection{$1}$0
 endsnippet
 
 snippet beg "begin block" b
-\begin{$1}
+\begin{$1}$2
 	$0
 \end{$1}
 endsnippet
@@ -110,5 +113,9 @@ endsnippet
 
 snippet prod "prod env" w
 \prod_{$1}^{$2}$0
+endsnippet
+
+snippet ttt "typewriter text" w
+\texttt{$1}$0
 endsnippet
 
