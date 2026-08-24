@@ -14,6 +14,7 @@ snippet notes "Notes template" b
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{parskip}
+\usepackage{framed}
 \usepackage{float}
 \usepackage{tikz}
 \usepackage{xcolor}
@@ -98,7 +99,7 @@ snippet subsub "subsubsection" b
 endsnippet
 
 snippet beg "begin block" b
-\begin{$1}$2
+\begin{$1}
 	$0
 \end{$1}
 endsnippet
@@ -140,4 +141,16 @@ endsnippet
 
 snippet mbb "math bb mathbb" w
 \mathbb{$1}$0
+endsnippet
+
+snippet -> "right arrow" i
+\rightarrow $0
+endsnippet
+
+snippet quad "quad" w
+\quad $0
+endsnippet
+
+snippet qquad "qquad" w
+\qquad $0
 endsnippet
