@@ -20,6 +20,7 @@ snippet notes "Notes template" b
 \usepackage{xcolor}
 \usepackage{pgfplots}
 \usepackage{wrapfig}
+\usepackage{graphicx}
 \DeclareMathSizes{10}{10}{10}{10}
 \pgfplotsset{compat=1.18}
 % Header Setup
@@ -153,4 +154,14 @@ endsnippet
 
 snippet qquad "qquad" w
 \qquad $0
+endsnippet
+
+snippet fig	"insert figures" b
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{${1:filename}}
+	\caption{${2:caption}}
+	\label{fig:${3:figure label}}
+\end{figure}
+$0
 endsnippet
