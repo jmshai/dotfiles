@@ -99,6 +99,7 @@ require("oil").setup({
 -- ============================================================
 vim.g.vimtex_view_method = 'sioyek'
 vim.g.vimtex_view_sioyek_exe = '/Applications/sioyek.app/Contents/MacOS/sioyek'
+vim.g.vimtex_view_sioyek_options = '--reuse-window'
 vim.g.vimtex_callback_progpath = '/opt/homebrew/bin/nvim'
 vim.g.vimtex_compiler_method = "latexmk"
 vim.g.vimtex_compiler_latexmk = {
