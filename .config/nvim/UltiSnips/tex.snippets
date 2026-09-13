@@ -21,10 +21,12 @@ snippet notes "Notes template" b
 \usepackage{pgfplots}
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage{mathtools}
 \renewcommand{\arraystretch}{1.2}
 \usepackage[style=numeric, backend=biber, natbib=true]{biblatex}
 \addbibresource{ref.bib}
 
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
