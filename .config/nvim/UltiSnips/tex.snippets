@@ -178,3 +178,13 @@ snippet fig	"insert figures" b
 \end{figure}
 $0
 endsnippet
+
+snippet algo "algorithm ; pseudocode" b
+\begin{algorithm}
+	\caption{${1:caption}} % name of algo
+	\label{${2:label}} % label to refer back to algo
+	\begin{algorithmic} % add [1] to begin at line num 1
+	$0
+	\end{algorithmic}
+\end{algorithm}
+endsnippet
