@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "ale": {
+      "rev": "e1789bc54483d76ac9ddb40b633d1645c8281914",
+      "src": "https://github.com/dense-analysis/ale"
+    },
     "cmp-buffer": {
       "rev": "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
       "src": "https://github.com/hrsh7th/cmp-buffer"

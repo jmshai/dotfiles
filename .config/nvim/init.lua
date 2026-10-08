@@ -18,7 +18,7 @@ vim.pack.add({
   { src = "https://github.com/lervag/vimtex" },
 
   -- Markdown Previewer
-  {	src = "https://github.com/OXY2DEV/markview.nvim" },
+  --{	src = "https://github.com/OXY2DEV/markview.nvim" },
 
   -- Fuzzy finder
   { src = "https://github.com/junegunn/fzf" },
