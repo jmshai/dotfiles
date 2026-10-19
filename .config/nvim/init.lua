@@ -36,6 +36,12 @@ vim.pack.add({
 
   -- Snippets
   {src = "https://github.com/SirVer/ultisnips" },
+
+  -- Treesitter
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+
+  -- Formatting
+  { src = "https://github.com/stevearc/conform.nvim" },
 })
 -- ============================================================
 -- THEME
@@ -141,6 +147,41 @@ vim.g.vimtex_syntax_conceal = {
 }
 
 -- ============================================================
+-- TREESITTER
+-- ============================================================
+require("nvim-treesitter").install({
+  -- web
+  "astro", "html", "css", "javascript", "typescript", "tsx", "json", "yaml",
+  -- systems and scripting
+  "c", "cpp", "python", "lua", "bash",
+  -- docs and neovim internals
+  "markdown", "markdown_inline", "vim", "vimdoc", "query",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+    if lang then pcall(vim.treesitter.start, args.buf, lang) end
+  end,
+})
+
+-- ============================================================
+-- FILETYPES AND INDENTATION
+-- ============================================================
+vim.filetype.add({ extension = { mdx = "markdown.mdx" } })
+vim.treesitter.language.register("markdown", "mdx")
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "astro", "mdx", "markdown.mdx", "javascript", "typescript",
+              "typescriptreact", "css", "html", "json", "yaml" },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+
+-- ============================================================
 -- LSP
 -- ============================================================
 vim.lsp.config.basedpyright = {
@@ -164,8 +205,24 @@ vim.lsp.config.lua_ls = {
     }
   }
 }
-vim.lsp.enable('basedpyright')
-vim.lsp.enable('lua_ls')
+-- shared completion capabilities for every server
+vim.lsp.config('*', {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
+
+vim.lsp.enable({
+  'basedpyright',  -- Python types and navigation (already configured above)
+  'ruff',          -- Python lint and quick fixes
+  'clangd',        -- C/C++
+  'ts_ls',         -- JavaScript/TypeScript
+  'astro',
+  'mdx_analyzer',
+  'html',
+  'cssls',
+  'jsonls',
+  'lua_ls',        -- already configured above
+})
+
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
@@ -173,6 +230,31 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'References' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+
+-- ============================================================
+-- FORMATTING
+-- ============================================================
+require("conform").setup({
+  formatters_by_ft = {
+    python     = { "ruff_organize_imports", "ruff_format" },
+    c          = { "clang_format" },
+    cpp        = { "clang_format" },
+    lua        = { "stylua" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    html       = { "prettier" },
+    css        = { "prettier" },
+    json       = { "prettier" },
+    yaml       = { "prettier" },
+    astro      = { "prettier" },
+    markdown   = { "prettier" },
+    mdx        = { "prettier" },
+  },
+})
+
+vim.keymap.set('n', '<leader>cf', function()
+  require("conform").format({ lsp_format = "fallback" })
+end, { desc = 'Format buffer' })
 
 -- ============================================================
 -- INLINE DIAGNOSTICS

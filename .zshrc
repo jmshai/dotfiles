@@ -98,3 +98,4 @@ export PATH=$PATH:/Users/Shailesh/.spicetify
 # SSH TERMINAL
 export TERM=xterm-256color
 
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
