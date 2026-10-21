@@ -99,3 +99,4 @@ export PATH=$PATH:/Users/Shailesh/.spicetify
 export TERM=xterm-256color
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
