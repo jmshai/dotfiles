@@ -48,6 +48,15 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+deploy() {
+    (
+        cd ~/website || return 1
+        pnpm check &&
+        pnpm build &&
+        rsync -avz --delete dist/ shai@shaijm:/var/www/shaijm.com/personal-website/
+    )
+}
+
 # ============================================
 # GENERAL ALIASES
 # ============================================
@@ -59,7 +68,6 @@ alias mb="brew"
 alias doc2pdf='soffice --headless --convert-to pdf'
 alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 alias vim="nvim"
-alias cat="bat"
 # ============================================
 # NAVIGATION
 # ============================================
