@@ -21,10 +21,19 @@ eval "$(fzf --zsh)"
 # PROMPT
 # ============================================
 autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats ' on %b'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '*'
+zstyle ':vcs_info:git:*' stagedstr '+'
+zstyle ':vcs_info:git:*' formats ' on %b%u%c'
 setopt PROMPT_SUBST
-PROMPT='%F{173}%n%f @ %F{109}%1~%f%F{143}${vcs_info_msg_0_}%f> '
+precmd() {
+  vcs_info
+  if [[ -n $vcs_info_msg_0_ ]]; then
+    PROMPT="%F{173}%n%f @ %F{109}%1~%f%F{143}${vcs_info_msg_0_}%f> "
+  else
+    PROMPT="%F{173}%n%f @ %F{109}%1~%f > "
+  fi
+}
 
 # ============================================
 # FUNCTIONS
